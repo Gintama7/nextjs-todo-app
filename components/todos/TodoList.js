@@ -3,9 +3,9 @@ import React from 'react'
 const TodoList = (props) => {
 
     const markHandler=(id)=>{
-        const doneItem = props.todos.find(item => item.id === id);
-        doneItem.completed = true;
-        console.log(doneItem.completed);
+        // const doneItem = props.todos.find(item => item.id === id);
+        // doneItem.completed = true;
+        // console.log(doneItem.completed);
     }
   return (
     <ul>
