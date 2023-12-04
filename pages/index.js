@@ -58,8 +58,30 @@ export async function getStaticProps(){
       id:todo._id.toString()
      }))
     },
-    revalidate: 1,
+    revalidate: 1
   }
 }
+
+
+// export async function getServerSideProps(){
+//   const client = await MongoClient.connect('mongodb+srv://elnino:cMUuwM513oIUOXLg@cluster0.ivvvgtb.mongodb.net/todos');
+//   const db = client.db();
+
+//   const todoCollection = db.collection('todos');
+//   const todos = await todoCollection.find().toArray();
+
+//   client.close();
+
+
+//   return {
+//     props:{
+//      todos: todos.map(todo =>({
+//       completed:todo.completed,
+//       task:todo.task,
+//       id:todo._id.toString()
+//      }))
+//     },
+//   }
+// }
 
 export default HomePage

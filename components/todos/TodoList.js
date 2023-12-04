@@ -1,4 +1,4 @@
-import React from 'react'
+import classes from './TodoList.module.css';
 
 const TodoList = (props) => {
 
@@ -8,9 +8,9 @@ const TodoList = (props) => {
         // console.log(doneItem.completed);
     }
   return (
-    <ul>
+    <ul className={classes.main}>
         {props.todos.map((item)=>(
-        !item.completed &&    <li key={item.id}>{item.task} <button onClick={()=>markHandler(item.id)}>Mark as done</button> <button>Delete</button></li>
+        !item.completed &&    <li key={item.id} className={classes.list_items} >{item.task} <span> <button onClick={()=>markHandler(item.id)} className={classes.mark_btn}>Mark as done</button> <button className={classes.del_btn}>Delete</button></span></li>
         ))}
     </ul>
   )
