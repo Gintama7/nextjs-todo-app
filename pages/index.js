@@ -1,11 +1,13 @@
 import TodoList from '@/components/todos/TodoList';
 import { MongoClient } from 'mongodb';
+import { useRouter } from 'next/router';
 
 import React, { useState } from 'react'
 
 const HomePage = (props) => {
  const [enteredTodo,setEnteredTodo] = useState('');
   const [todo,setTodo] = useState([]);
+const router = useRouter();
 
   const todoHandler = async(e) => {
     e.preventDefault();
@@ -22,8 +24,12 @@ const HomePage = (props) => {
     const data = (await res).json();
 
     console.log(data);
+    setEnteredTodo('');
+
+    // router.refresh();
 
   };
+
 
 
   return (
